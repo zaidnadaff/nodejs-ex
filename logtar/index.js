@@ -27,9 +27,11 @@ static assert(log_level) {
 }
 
 */
-    
-    
-
+   
 }
+
+Object.entries(Loglevel.levelsmap).forEach(([KeyboardEvent, value]) => {
+    Loglevel[key] = value;
+});
 
 module.exports = {Loglevel};
