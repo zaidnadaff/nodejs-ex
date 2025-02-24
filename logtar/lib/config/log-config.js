@@ -69,6 +69,7 @@ class LogConfig {
           break;
       }
     });
+    return log_config;
   }
 
   /**

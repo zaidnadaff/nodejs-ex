@@ -36,6 +36,18 @@ class Logger {
   get level() {
     return this.#config.level;
   }
+  /**
+   * @returns {String} The current file prefix.
+   */
+  get file_prefix() {
+    return this.#config.file_prefix;
+  }
+  get time_threshold() {
+    return this.#config.rolling_config.time_threshold;
+  }
+  get size_threshold() {
+    return this.#config.rolling_config.size_threshold;
+  }
 }
 
 module.exports = { Logger };

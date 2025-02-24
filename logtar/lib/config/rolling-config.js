@@ -58,6 +58,19 @@ class RollingConfig {
     });
     return rolling_config;
   }
+
+  /**
+   * @returns {number} the current time threshold
+   */
+  get time_threshold() {
+    return this.#time_threshold;
+  }
+  /**
+   * @returns {number} the current size threshold
+   */
+  get size_threshold() {
+    return this.#size_threshold;
+  }
 }
 
 module.exports = { RollingConfig };
