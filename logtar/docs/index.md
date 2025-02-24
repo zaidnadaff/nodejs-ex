@@ -42,8 +42,28 @@ class variables are public by default, so declare them as private by using `#` a
 
 # context of the project
 
-there are currently five files, a main two util files -
+there are currently five files that deal have different functionalities. A main logger file binds it all and a logtar file which acts as the final library which can be imported. two util files, two config files and a logger.js file.
 
-## log-level.js
+### utils/log-level.js
 
-which deals with
+which deals with defining the levels of log, namely debug, info, warn, error and critical with corresponding levels from 0 to 4.
+
+### utils/rolling-options.js
+
+Rolling options are created which state after how much time a new log file is created or the max size of a log file after which a new file is created. These options provide us a way to make sure that there isn't much cluttering.
+
+### config/rolling-config.js
+
+RollingConfig is created with either the default time and size options, or from the options that are provided from the user. passed as a json object which is read and the corresponding options are applied.
+
+### config/log-config.js
+
+LogConfig is created with default values or the values provided by the user. There's file_prefix, rolling_config and log_level which are read. They are read from a file parsed into json and then passed as an object.
+
+### logger.js
+
+This file binds it all, such that a new logger is created by calling this class.
+
+### logtar.js
+
+final library export.
