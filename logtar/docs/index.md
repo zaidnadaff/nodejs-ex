@@ -31,3 +31,10 @@ Loglevel.levels = ["DEBUG", "INFO", "WARN", "ERROR", "CRITICAL"]
 Loglevel.levelsMap = {DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3, CRITICAL: 4}
 Loglevel.assert = function(log_level) { ... }
 ```
+
+js class fields are public by default.
+
+
+Understanfing how private variables work, getter functions, and class variables.
+class variables are public by default, so declare them as private by using `#` access these private variables by using the same way. create getter functions that do not require to be called by paranthesis..
+
