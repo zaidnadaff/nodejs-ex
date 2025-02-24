@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 
-const { Loglevel } = require("../utils/log-level");
-const { RollingConfig } = require("rolling_config");
+const { LogLevel } = require("../utils/log-level");
+const { RollingConfig } = require("./rolling-config");
 
 class LogConfig {
   /**
@@ -59,32 +59,32 @@ class LogConfig {
     Object.keys(json).forEach((key) => {
       switch (key) {
         case "level":
-          log_level = log_level.with_log_level(json[key]);
+          log_config = log_config.with_log_level(json[key]);
           break;
         case "rolling_config":
-          log_level = log_level.with_rolling_config(json[key]);
+          log_config = log_config.with_rolling_config(json[key]);
           break;
         case "file_prefix":
-          log_level = log_level.with_file_prefix(json[key]);
+          log_config = log_config.with_file_prefix(json[key]);
           break;
       }
     });
   }
 
   /**
-   * @returns {Loglevel} The current log level.
+   * @returns {LogLevel} The current log level.
    */
   get level() {
     return this.#level;
   }
 
   /**
-   * @param {Loglevel} log_level the log level to be set
+   * @param {LogLevel} log_level the log level to be set
    * @returns {LogConfig} returns the logconfig instance
    * @throws {Error} when the log_level is not an instance of Loglevel
    */
   with_log_level(log_level) {
-    Loglevel.assert(log_level);
+    LogLevel.assert(log_level);
     this.#level = log_level;
     return this;
   }

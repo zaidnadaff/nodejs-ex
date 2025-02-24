@@ -1,1 +1,1 @@
-module.exports("./lib/logtar");
+module.exports = require("./lib/logtar");

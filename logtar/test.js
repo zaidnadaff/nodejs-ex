@@ -1,4 +1,2 @@
-const {Logger, Loglevel } = require('./index');
-
-const test = new Logger(Loglevel.WARN);
-console.log(test.level)
+const { Logger, LogConfig } = require("./index");
+const logger = Logger.with_config(LogConfig.from_file("./config.json"));
